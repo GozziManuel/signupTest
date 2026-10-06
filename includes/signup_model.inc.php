@@ -12,4 +12,15 @@ function get_username($pdo, $username){
     return $result;
 }
 
+function get_email($pdo, $email){
+    $query = "SELECT email FROM users WHERE email = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$email]);
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    return $result;
+}
+
 ?>

@@ -22,6 +22,7 @@ else
 }
 
 
+// 
 function isUsernameTaken($pdo, $username){
     if (get_username($pdo, $username)) {
         return true;
@@ -31,5 +32,14 @@ function isUsernameTaken($pdo, $username){
 
 }
 
+// 
+function isEmailTaken($pdo, $email){
+    if (get_email($pdo, $email)) {
+        return true;
+    }
+    else 
+        return false;
+
+}
 
 ?>
