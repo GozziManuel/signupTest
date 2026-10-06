@@ -23,4 +23,28 @@ function get_email($pdo, $email){
     return $result;
 }
 
+
+function set_user($pdo, $email, $username, $password){
+    $query = "INSERT INTO users (email, pswrd, username) VALUES (?, ?, ?)";
+    
+
+    // COST FOR SECURITY
+    $options = [
+        "cost"=> 12
+    ];
+
+    // HASHING PASSWORD
+    $hashedPSWRD = password_hash($password, PASSWORD_BCRYPT, $options);
+
+    $stmt = $pdo->prepare($query);
+
+
+    $stmt->execute([$email, $hashedPSWRD, $username]);
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    return $result;
+}
+
 ?>

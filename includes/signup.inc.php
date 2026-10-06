@@ -38,6 +38,17 @@ try {
         die("Errore");
     }
 
+
+    // 
+    set_user($pdo, $email, $username, $password);
+
+    header("Location: ../index.php?signup=success");
+    //
+
+    $pdo = null;
+    $stmt = null;
+
+    // 
 } catch (PDOException $e) {
     die("Query failed" . $e);
 }
