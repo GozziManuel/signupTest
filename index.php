@@ -1,3 +1,9 @@
+<?php 
+require_once "./includes/config_session.inc.php";
+require_once "./includes/signup_view.inc.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,7 @@
             <!-- Campo Email -->
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="nome@esempio.it" >
+                <input type="text" id="email" name="email" placeholder="nome@esempio.it" >
             </div>
 
             <!-- Campo Password -->
@@ -31,6 +37,9 @@
             <!-- Pulsante Accedi -->
             <button type="submit" class="btn-submit">Accedi</button>
         </form>
+        <?php 
+        checkSignupErrors()
+        ?>
     </div>
 </body>
 </html>

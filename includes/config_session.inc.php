@@ -13,6 +13,7 @@ session_set_cookie_params([
 ]);
 
 
+session_start();
 
 if (!isset($_SESSION["last_regeneration"])) {
     sessionIDregenerator();
@@ -23,7 +24,8 @@ if (!isset($_SESSION["last_regeneration"])) {
     }
 }
 
-function sessionIDregenerator() {
+function sessionIDregenerator() 
+{
     session_regenerate_id();
     $_SESSION["last_regeneration"] = time();
  
