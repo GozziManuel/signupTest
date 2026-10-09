@@ -1,6 +1,8 @@
 <?php 
 require_once "./includes/config_session.inc.php";
 require_once "./includes/signup_view.inc.php";
+require_once "./includes/login_view.inc.php";
+
 
 ?>
 
@@ -39,6 +41,31 @@ require_once "./includes/signup_view.inc.php";
         </form>
         <?php 
         checkSignupErrors()
+        ?>
+    </div>
+     <div class="login-card">
+        <h2>Login</h2>
+        <form action="./includes/login.inc.php" method="POST">
+             <!-- Campo username -->
+           
+
+            <!-- Campo Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="nome@esempio.it" >
+            </div>
+
+            <!-- Campo Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password"  >
+            </div>
+
+            <!-- Pulsante Accedi -->
+            <button type="submit" class="btn-submit">Accedi</button>
+        </form>
+       <?php 
+        checkLoginErrors()
         ?>
     </div>
 </body>
