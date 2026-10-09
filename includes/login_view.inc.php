@@ -1,5 +1,14 @@
 <?php 
 
+function outputInfo(){
+
+if (isset($_SESSION["user_id"])) {
+    echo "You are Logged in as " . $_SESSION["user_email"];
+}
+else{
+    echo "You are not logged in";
+}
+}
 
 function checkLoginErrors(){
     if (isset($_SESSION["errors_login"])) {

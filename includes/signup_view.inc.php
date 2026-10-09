@@ -1,6 +1,5 @@
 <?php 
 
-
 function checkSignupErrors(){
     if (isset($_SESSION["errors_signup"])) {
         $errors = $_SESSION["errors_signup"];

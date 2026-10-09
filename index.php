@@ -15,7 +15,16 @@ require_once "./includes/login_view.inc.php";
     <title>Document</title>
 </head>
 <body>
+    <?php
+    outputInfo()
+    ?>
+     <?php 
+     
+     
+if (!isset($_SESSION["user_id"])) { ?>
      <div class="login-card">
+        
+
         <h2>Registrati</h2>
         <form action="./includes/signup.inc.php" method="POST">
              <!-- Campo username -->
@@ -43,6 +52,8 @@ require_once "./includes/login_view.inc.php";
         checkSignupErrors()
         ?>
     </div>
+ <?php } ?>
+
      <div class="login-card">
         <h2>Login</h2>
         <form action="./includes/login.inc.php" method="POST">
@@ -67,6 +78,15 @@ require_once "./includes/login_view.inc.php";
        <?php 
         checkLoginErrors()
         ?>
+    </div>
+         <div class="login-card">
+        <h2>Logout</h2>
+        <form action="./includes/logout.inc.php" method="POST">
+      
+      
+            <button type="submit" class="btn-submit">Logout</button>
+        </form>
+ 
     </div>
 </body>
 </html>
